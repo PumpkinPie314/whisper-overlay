@@ -14,6 +14,7 @@
 buildPythonPackage rec {
   pname = "realtime-stt";
   version = "0.1.16";
+  pyproject = true;
 
   src = fetchFromGitHub {
     owner = "oddlama";
@@ -22,8 +23,11 @@ buildPythonPackage rec {
     hash = "sha256-64RE/aT5PxuFFUTvjNefqTlAKWG1fftKV0wcY/hFlcg=";
   };
 
-  nativeBuildInputs = [
+  build-system = [
     setuptools
+  ];
+
+  nativeBuildInputs = [
     wheel
   ];
 
